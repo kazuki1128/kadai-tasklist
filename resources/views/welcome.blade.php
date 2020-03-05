@@ -4,6 +4,7 @@
     <div class="center jumbotron">
         <div class="text-center">
             <h1>Tasklist start?</h1>
-        </div>
+            {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
     </div>
 @endsection
