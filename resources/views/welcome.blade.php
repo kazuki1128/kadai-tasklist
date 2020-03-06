@@ -2,7 +2,11 @@
 
 @section('content')
     @if (Auth::check())
-        {{ Auth::user()->name }}
+         <h1>{{ Auth::user()->name }}のタスク一覧</h1>
+         @if(count($tasks) > 0)
+             @include('tasks.index', ['tasks' => $tasks])
+         @endif
+          {!! link_to_route('tasks.create', '新規タスクの登録', null, ['class' => 'btn btn-primary']) !!}
     @else
         <div class="center jumbotron">
         <div class="text-center">
